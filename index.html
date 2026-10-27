@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotway Pizza & Fast Food | North Karachi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--board:#22252a;--board2:#2c3037;--chalk:#f4f0e6;--muted:#b9b5aa;--sun:#f7c21b;--flame:#e8501f;--line:#4a4f58;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--board);color:var(--chalk);font:500 17px/1.55 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bowlby One',Impact,sans-serif;font-weight:400;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--board);border-bottom:2px dashed var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Bowlby One',Impact,sans-serif;font-size:22px;text-decoration:none;color:var(--sun)}
+.logo b{color:var(--flame);font-weight:400}
+nav{display:flex;gap:18px;align-items:center}
+nav a{text-decoration:none;font-size:16px}
+.btn{display:inline-block;background:var(--sun);color:#1b1b1b;font-weight:600;padding:12px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font:600 17px Barlow,sans-serif}
+.btn.alt{background:transparent;color:var(--chalk);border:2px solid var(--chalk)}
+.hero{padding:56px 0 48px;display:grid;gap:32px;grid-template-columns:1.2fr 1fr;align-items:center}
+.hero h1{font-size:clamp(40px,8vw,84px);color:var(--sun)}
+.hero h1 span{display:block;color:var(--chalk)}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stamp{justify-self:center;width:min(300px,80vw);aspect-ratio:1;border-radius:50%;background:var(--sun);color:#1b1b1b;display:grid;place-content:center;text-align:center;transform:rotate(-8deg);border:6px double #1b1b1b;outline:4px solid var(--sun);outline-offset:6px;animation:pop .8s cubic-bezier(.2,1.4,.4,1) both}
+.stamp small{font-size:17px;font-weight:600}
+.stamp strong{font:400 64px/1 'Bowlby One',Impact,sans-serif;color:var(--flame)}
+.stamp em{font-style:normal;font-weight:600;font-size:17px}
+@keyframes pop{from{transform:rotate(-30deg) scale(.4);opacity:0}}
+@media(prefers-reduced-motion:reduce){.stamp{animation:none}html{scroll-behavior:auto}}
+section{padding:48px 0;border-top:2px dashed var(--line)}
+section h2{font-size:clamp(30px,5vw,44px);margin-bottom:8px;color:var(--sun)}
+.sub{color:var(--muted);margin:0 0 28px}
+.deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:18px}
+.deal{border:2px dotted var(--chalk);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--board2)}
+.deal h3{font-size:20px;color:var(--flame)}
+.deal p{margin:0;flex:1}
+.deal .row{display:flex;justify-content:space-between;align-items:center}
+.price{font:400 24px 'Bowlby One',Impact,sans-serif;color:var(--sun)}
+.add{background:var(--chalk);color:#1b1b1b;border:0;border-radius:999px;padding:8px 16px;font:600 16px Barlow,sans-serif;cursor:pointer}
+.add:active{transform:scale(.94)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{background:transparent;color:var(--chalk);border:2px solid var(--line);border-radius:999px;padding:8px 18px;font:600 16px Barlow,sans-serif;cursor:pointer}
+.tab[aria-selected=true]{background:var(--sun);color:#1b1b1b;border-color:var(--sun)}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:4px 36px}
+.items li{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dotted var(--line)}
+.items .n{flex:1}.items .n small{display:block;color:var(--muted);font-size:14px}
+.items .p{font-weight:600;color:var(--sun);min-width:56px;text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chips span{border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:15px}
+.order{background:var(--board2);border:2px dotted var(--chalk);border-radius:16px;padding:24px;display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.order ul{list-style:none;margin:0;padding:0;min-height:60px}
+.order li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dotted var(--line)}
+.order li button{background:none;border:0;color:var(--flame);cursor:pointer;font:600 16px Barlow,sans-serif}
+.tot{display:flex;justify-content:space-between;font-weight:600;font-size:20px;margin:14px 0}
+input,textarea{width:100%;background:var(--board);color:var(--chalk);border:2px solid var(--line);border-radius:10px;padding:10px 12px;font:500 16px Barlow,sans-serif;margin-bottom:10px}
+label{font-size:15px;color:var(--muted)}
+.empty{color:var(--muted)}
+.info{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.info h3{font-size:20px;margin-bottom:6px;color:var(--chalk)}
+.info p{margin:0;color:var(--muted)}
+footer{padding:28px 0 40px;border-top:2px dashed var(--line);color:var(--muted);font-size:15px}
+@media(max-width:760px){.hero,.order{grid-template-columns:1fr}nav a.h{display:none}.art{order:-1}.art .stamp{right:0}.order{padding:18px}.hero{padding-top:32px}}
+.art{position:relative;justify-self:center}.art svg{display:block;width:min(380px,88vw);height:auto}
+.art .stamp{position:absolute;right:-14px;bottom:-6px;width:150px;border-width:4px;outline-width:3px;outline-offset:4px}
+.art .stamp small{font-size:12px;padding:0 12px}.art .stamp strong{font-size:34px}.art .stamp em{font-size:13px}
+.perks{background:var(--sun);color:#1b1b1b}.perks .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;padding-top:14px;padding-bottom:14px;font-weight:600}
+.rev{border:2px dotted var(--chalk);border-radius:14px;padding:20px;background:var(--board2)}
+.rev .st{color:var(--sun);letter-spacing:3px;font-size:18px}.rev p{margin:8px 0 10px}.rev small{color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:s}
+.steps li{counter-increment:s;border-left:4px solid var(--flame);padding-left:16px}
+.steps li::before{content:counter(s);font:400 34px 'Bowlby One',Impact,sans-serif;color:var(--sun);display:block}
+.steps b{display:block;font-size:19px}.steps span{color:var(--muted)}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:#25d366;color:#0b2d17;font-weight:600;padding:12px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+.fcols{display:flex;flex-wrap:wrap;gap:24px 56px;margin-bottom:18px}.fcols b{display:block;color:var(--chalk);margin-bottom:4px}.fcols a{display:block;text-decoration:none;color:var(--muted)}
+@media(max-width:400px){.wrap{padding:0 14px}.logo{font-size:19px}nav .btn{padding:9px 14px;font-size:15px}.hero h1{font-size:36px}.hero p{font-size:17px}.btn{padding:11px 18px}.art .stamp{width:120px}.art .stamp strong{font-size:26px}.art .stamp small{font-size:10px;padding:0 8px}.items li{flex-wrap:wrap}.wa{font-size:15px;padding:10px 14px}.perks .wrap{font-size:15px}}
+@media(min-width:1200px){.wrap{max-width:1160px}}
+body{background:radial-gradient(700px 520px at 85% 190px,rgba(232,80,31,.42),transparent),radial-gradient(520px 420px at 5% 320px,rgba(247,194,27,.16),transparent),var(--board);background-repeat:no-repeat}
+section h2::after{content:"";display:block;width:96px;height:6px;margin-top:10px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--flame) 0 14px,transparent 14px 20px)}
+#menu,#reviews{background:var(--board2)}#reviews .rev{background:var(--board)}
+.fl{position:absolute;font-size:40px;z-index:2;animation:bob 4s ease-in-out infinite}.f1{left:-8px;top:14px}.f2{right:4px;top:-8px;animation-delay:1.2s}.f3{left:8px;bottom:12px;animation-delay:2.4s}
+@keyframes bob{50%{transform:translateY(-12px) rotate(8deg)}}
+.tick{background:var(--flame);color:#fff;overflow:hidden;white-space:nowrap;padding:10px 0;font:400 18px 'Bowlby One',Impact,sans-serif}
+.tick div{display:inline-block;animation:mq 45s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.deal{position:relative;overflow:hidden;transition:transform .2s,border-color .2s}.deal:hover{transform:translateY(-4px);border-color:var(--sun)}
+.deal::before{content:"";position:absolute;right:-34px;top:-34px;width:100px;height:100px;background:var(--sun);border-radius:50%;opacity:.16}
+.deal .ic{font-size:40px;line-height:1}
+.deal .price{background:var(--sun);color:#1b1b1b;padding:2px 12px;border-radius:8px;font-size:20px;transform:rotate(-3deg)}
+.items .e{font-size:26px}
+.band{background:var(--sun);color:#1b1b1b;padding:48px 0;text-align:center}
+.band h2{color:#1b1b1b;font-size:clamp(28px,5vw,48px)}.band p{margin:10px 0 22px;font-size:19px}
+.band .cta{justify-content:center}.band .btn{background:#1b1b1b;color:var(--sun)}.band .btn.alt{background:transparent;color:#1b1b1b;border-color:#1b1b1b}
+@media(prefers-reduced-motion:reduce){.tick div,.fl{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">Hot<b>Way</b></a>
+<nav><a class="h" href="#deals">Deals</a><a class="h" href="#menu">Menu</a><a class="h" href="#visit">Find us</a><a class="btn" href="#order">Order now</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Hot pizza.<span>Fast, any hour.</span></h1>
+<p>Pizza, burgers and broast from Sector 11-A, North Karachi. Open 24 hours, with dine-in, takeaway and delivery.</p>
+<div class="cta"><a class="btn" href="#order">Order on WhatsApp</a><a class="btn alt" href="#deals">See deals</a></div>
+</div>
+<div class="art"><span class="fl f1" aria-hidden="true">🍅</span><span class="fl f2" aria-hidden="true">🧀</span><span class="fl f3" aria-hidden="true">🌶️</span><svg viewBox="0 0 400 400" role="img" aria-label="Illustration of a loaded pizza"><circle cx="200" cy="200" r="188" fill="#c98a2b"/><circle cx="200" cy="200" r="172" fill="#e8501f"/><circle cx="200" cy="200" r="158" fill="#f7c21b"/><g fill="#f9d95a"><circle cx="120" cy="140" r="34"/><circle cx="270" cy="120" r="40"/><circle cx="300" cy="260" r="36"/><circle cx="150" cy="285" r="42"/><circle cx="215" cy="205" r="30"/></g><g fill="#b83a16"><circle cx="150" cy="100" r="22"/><circle cx="245" cy="170" r="22"/><circle cx="110" cy="215" r="22"/><circle cx="215" cy="290" r="22"/><circle cx="310" cy="190" r="20"/><circle cx="195" cy="135" r="18"/><circle cx="265" cy="305" r="18"/><circle cx="85" cy="150" r="16"/></g><g fill="#4b8b3b"><ellipse cx="175" cy="180" rx="12" ry="6" transform="rotate(-30 175 180)"/><ellipse cx="285" cy="225" rx="12" ry="6" transform="rotate(20 285 225)"/><ellipse cx="140" cy="250" rx="12" ry="6" transform="rotate(60 140 250)"/><ellipse cx="230" cy="100" rx="12" ry="6" transform="rotate(10 230 100)"/></g><g stroke="#22252a" stroke-width="4" stroke-linecap="round"><path d="M200 42V358M42 200H358M88 88L312 312M312 88L88 312"/></g></svg><div class="stamp" role="img" aria-label="Deal 1: 2 large pizzas with a 1.5 litre drink for Rs. 2,300"><small>2 large pizzas + 1.5 L drink</small><strong>2300</strong><em>rupees only</em></div></div>
+</div>
+
+<div class="perks"><div class="wrap"><span>Open 24 hours</span><span>Home delivery</span><span>Fresh and hot</span><span>4.2 on Google, 63 reviews</span></div></div>
+
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<section id="deals"><div class="wrap">
+<h2>Deals</h2><p class="sub">Tap Add to put a deal in your order.</p>
+<div class="deals" id="dealList"></div>
+</div></section>
+
+<section id="menu"><div class="wrap">
+<h2>Menu</h2><p class="sub">Prices in rupees.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<ul class="items" id="items"></ul>
+<div class="chips" id="flavours" hidden></div>
+</div></section>
+
+<section id="order"><div class="wrap">
+<h2>Your order</h2><p class="sub">Send it to us on WhatsApp. We confirm by reply.</p>
+<div class="order">
+<div><ul id="cart" aria-live="polite"></ul><div class="tot"><span>Total</span><span id="total">Rs 0</span></div></div>
+<div>
+<label for="nm">Name</label><input id="nm" autocomplete="name">
+<label for="ad">Delivery address</label><textarea id="ad" rows="2"></textarea>
+<label for="nt">Pizza flavour or notes</label><textarea id="nt" rows="2" placeholder="e.g. Chicken Tikka, Arabian Green"></textarea>
+<button class="btn" id="send" type="button">Send on WhatsApp</button>
+</div>
+</div>
+</div></section>
+
+<div class="band"><div class="wrap"><h2>Craving pizza at 3 AM? We are open.</h2><p>Hotway is open 24 hours, with delivery.</p><div class="cta"><a class="btn" href="tel:+923409991999">Call 0340-9991999</a><a class="btn alt" href="https://wa.me/923409991999" target="_blank" rel="noopener">Order on WhatsApp</a></div></div></div>
+
+<section id="reviews"><div class="wrap">
+<h2>What customers say</h2><p class="sub">4.2 stars from 63 Google reviews. 1.5K people follow us on Facebook.</p>
+<div class="deals">
+<div class="rev"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Tasty pizza with generous toppings at a fair price. The pizza fries are loaded with cheese and chicken.</p><small>Google review</small></div>
+<div class="rev"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Everything arrives fresh and hot. Highly recommended.</p><small>Google review</small></div>
+<div class="rev"><div class="st" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Excellent taste and service. The Arabian Green pizza is a must try.</p><small>Google review</small></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>How to order</h2><p class="sub">Three steps, no app needed.</p>
+<ol class="steps"><li><b>Pick your food</b><span>Add deals and menu items to your order above.</span></li><li><b>Send on WhatsApp</b><span>Your order, total and address go to us in one message.</span></li><li><b>We confirm and deliver</b><span>We reply to confirm, then it comes to your door.</span></li></ol>
+</div></section>
+
+<section id="visit"><div class="wrap">
+<h2>Find us</h2>
+<div class="info">
+<div><h3>Address</h3><p>SA 11 ST 45, Sector 11-A, near Shell Petrol Pump, North Karachi</p></div>
+<div><h3>Hours</h3><p>Open 24 hours, every day</p></div>
+<div><h3>Call for delivery</h3><p><a href="tel:+923132200039">0313-2200039</a><br><a href="tel:+923323000166">0332-3000166</a><br><a href="tel:+923409991999">0340-9991999</a> (WhatsApp)</p></div>
+<div><h3>Facebook</h3><p><a href="https://facebook.com/hotwayfood" target="_blank" rel="noopener">facebook.com/hotwayfood</a></p></div>
+</div>
+</div></section>
+</main>
+<a class="wa" href="https://wa.me/923409991999" target="_blank" rel="noopener">Order on WhatsApp</a>
+<footer><div class="wrap"><div class="fcols"><div><b>Hotway Pizza & Fast Food</b>SA 11 ST 45, Sector 11-A,<br>North Karachi</div><div><b>Explore</b><a href="#deals">Deals</a><a href="#menu">Menu</a><a href="#order">Your order</a></div><div><b>Contact</b><a href="tel:+923409991999">0340-9991999</a><a href="https://facebook.com/hotwayfood" target="_blank" rel="noopener">Facebook</a></div></div>Website design by AuraCode Web Studio (demo).</div></footer>
+
+<script>
+var WA="923409991999";
+var deals=[
+["Deal 1","2 large pizzas, 1.5 L drink",2300],["Deal 2","2 regular pizzas, 1.5 L drink",1650],
+["Deal 3","2 small pizzas, 1 L drink",900],["Deal 4","3 large pizzas, 1.5 L drink",3400],
+["Deal 5","2 extra large pizzas (15 inch), 1.5 L drink free",3000],["Deal 6","1 jumbo pizza (20 inch), 1.5 L drink free",2500],
+["Deal 7","4 zinger burgers, fries, coleslaw, 1.5 L drink",1650],["Deal 8","4 quarter broast, fries, coleslaw, 1.5 L drink",1950],
+["Deal 9","2 quarter broast, fries, bun, coleslaw, 500 ml drink",950],["Deal 10","2 zinger burgers, fries, coleslaw, 500 ml drink",800],
+["Deal 11","2 Mexican sandwiches, 500 ml drink",1050],["Deal 12","2 small pizzas, 2 zinger burgers, 1 L drink",1650]];
+var menu={
+"Pizza":[["Small pizza",400],["Regular pizza",750],["Large pizza",1100],["Extra large pizza",1500],["Jumbo pizza (20 inch)",2500],["Beef pizza, small",400],["Beef pizza, regular",750],["Beef pizza, large",1100]],
+"Burgers & broast":[["Zinger burger",380],["Beef burger",300],["Chicken burger",300],["Cheesy blast burger",500],["Monster burger",700],["Club sandwich, normal",350],["BBQ club sandwich",400],["Quarter broast, chest",460],["Quarter broast, leg",430],["Fries",200],["Add-on cheese",50]],
+"Appetizers":[["Pasta, regular",350],["Pasta, large",600],["Lasagne, regular",350],["Lasagne, large",600],["Pizza fries, regular",300],["Pizza fries, large",500],["Mexican sandwich",500],["Crispy roll",300],["Hot special roll",300],["Cheesy bread",300]]};
+var flav=["Chicken Tikka","Chicken Fajita","Chicken Supreme","Cheesy Delight","Chicken Tandoori","Chicken Sicilian","Chicken Fiesta","Malai Boti","Malai Fiesta","Arabian Green","Arabian Fiesta","Afghani Tikka","Super Supreme"];
+var cart=[];var ICON={"Pizza":"🍕","Burgers & broast":"🍔","Appetizers":"🍟"};
+function $(i){return document.getElementById(i)}
+function addItem(n,p){cart.push([n,p]);draw()}
+function draw(){
+var c=$("cart"),t=0;c.innerHTML="";
+if(!cart.length){c.innerHTML='<li class="empty">Nothing added yet. Pick a deal or menu item.</li>'}
+cart.forEach(function(x,i){t+=x[1];var li=document.createElement("li");
+var s=document.createElement("span");s.textContent=x[0]+" - Rs "+x[1];
+var b=document.createElement("button");b.type="button";b.textContent="Remove";b.setAttribute("aria-label","Remove "+x[0]);
+b.onclick=function(){cart.splice(i,1);draw()};li.appendChild(s);li.appendChild(b);c.appendChild(li)});
+$("total").textContent="Rs "+t}
+function mk(n,d,p,tag){return}
+var dl=$("dealList");
+deals.forEach(function(d){var e=document.createElement("div");e.className="deal";
+e.innerHTML='<div class="ic"></div><h3></h3><p></p><div class="row"><span class="price"></span><button class="add" type="button">Add</button></div>';
+e.querySelector("h3").textContent=d[0];e.querySelector(".ic").textContent=/pizza/.test(d[1])?"🍕":/zinger/.test(d[1])?"🍔":/broast/.test(d[1])?"🍗":"🥪";e.querySelector("p").textContent=d[1];e.querySelector(".price").textContent="Rs "+d[2];
+e.querySelector("button").onclick=function(){addItem(d[0]+": "+d[1],d[2])};dl.appendChild(e)});
+var tabs=$("tabs");
+function show(k){
+Array.prototype.forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.textContent===k)});
+var ul=$("items");ul.innerHTML="";
+menu[k].forEach(function(m){var li=document.createElement("li");
+li.innerHTML='<span class="e"></span><span class="n"></span><span class="p"></span><button class="add" type="button">Add</button>';
+li.querySelector(".e").textContent=ICON[k];li.querySelector(".n").textContent=m[0];li.querySelector(".p").textContent=m[1];
+li.querySelector("button").onclick=function(){addItem(m[0],m[1])};ul.appendChild(li)});
+$("flavours").hidden=k!=="Pizza"}
+Object.keys(menu).forEach(function(k){var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.textContent=k;b.onclick=function(){show(k)};tabs.appendChild(b)});
+$("flavours").innerHTML="<strong style='width:100%'>Pizza flavours</strong>"+flav.map(function(f){return "<span>"+f+"</span>"}).join("");
+show("Pizza");draw();var tk=flav.map(function(f){return f+"  🍕  "}).join("");$("tk").textContent=tk+tk;
+$("send").onclick=function(){
+if(!cart.length){alert("Please add at least one item first.");return}
+var t=0,m="Hello Hotway, I want to order:\n";
+cart.forEach(function(x){t+=x[1];m+="- "+x[0]+" (Rs "+x[1]+")\n"});
+m+="Total: Rs "+t;
+if($("nt").value)m+="\nNotes: "+$("nt").value;
+if($("nm").value)m+="\nName: "+$("nm").value;
+if($("ad").value)m+="\nAddress: "+$("ad").value;
+window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank")};
+</script>
+</body>
+</html>
